@@ -4,7 +4,6 @@ import "./style.css";
 // get the localStorage data back
 const getLocalData = () => {
   const lists = localStorage.getItem("mytodolist");
-
   if (lists) {
     return JSON.parse(lists);
   } else {
@@ -21,7 +20,7 @@ const Todo = () => {
   // add the items fucnction
   const addItem = () => {
     if (!inputdata) {
-      alert("plz fill the data");
+      alert("Please fill the data");
     } else if (inputdata && toggleButton) {
       setItems(
         items.map((curElem) => {
@@ -79,7 +78,7 @@ const Todo = () => {
         <div className="child-div">
           <figure>
             <img src="./images/todo.svg" alt="todologo" />
-            <figcaption>Add Your List Here ✌</figcaption>
+            <figcaption>Todo List</figcaption>
           </figure>
           <div className="addItems">
             <input
@@ -113,14 +112,13 @@ const Todo = () => {
               );
             })}
           </div>
-
-          {/* rmeove all button  */}
+          {/* remove all button  */}
           <div className="showItems">
             <button
               className="btn effect04"
               data-sm-link-text="Remove All"
               onClick={removeAll}>
-              <span> CHECK LIST</span>
+              <span>Remove All</span>
             </button>
           </div>
         </div>
